@@ -1,6 +1,6 @@
 # WeatherFetch
 
-**TODO: Add description**
+**Get the weather**
 
 ## Installation
 
@@ -21,4 +21,3 @@ If [available in Hex](https://hex.pm/docs/publish), the package can be installed
       [applications: [:weather_fetch]]
     end
     ```
-
