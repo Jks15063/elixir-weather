@@ -4,6 +4,8 @@ defmodule WeatherFetch.Mixfile do
   def project do
     [app: :weather_fetch,
      version: "0.1.0",
+     name:            "Weather Fetcher",
+     # source_url:      "",
      elixir: "~> 1.3",
      build_embedded: Mix.env == :prod,
      start_permanent: Mix.env == :prod,
@@ -14,7 +16,9 @@ defmodule WeatherFetch.Mixfile do
   #
   # Type "mix help compile.app" for more information
   def application do
-    [applications: [:logger]]
+    [
+      applications: [ :logger, :httpoison ]
+    ]
   end
 
   # Dependencies can be Hex packages:
@@ -27,6 +31,11 @@ defmodule WeatherFetch.Mixfile do
   #
   # Type "mix help deps" for more examples and options
   defp deps do
-    []
+    [
+      {:httpoison, "~> 0.9"},
+      {:exml,   ">= 0.0.0"},
+      {:ex_doc,    "~> 0.12"},
+      {:earmark,   "~> 1.0",   override: true}
+    ]
   end
 end
