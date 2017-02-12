@@ -9,7 +9,11 @@ defmodule CliTest do
     assert parse_args(["--help", "anything"]) == :help
   end
 
-  test "gets temp for location" do
-    assert process({ "KDEN", "temp_f" }) == {:ok, "29.0"}
+  test "two values returned if two given" do
+    assert parse_args(~w(KDEN temp_f)) == {"KDEN", "temp_f"}
+  end
+
+  test "stat defaults to current_observation if one value is given" do
+    assert parse_args(~w(KDEN)) == {"KDEN", "current_observation"}
   end
 end
